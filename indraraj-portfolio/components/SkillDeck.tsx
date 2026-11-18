@@ -24,7 +24,7 @@ export function SkillDeck() {
               <Reveal delay={Math.min(i * 0.05, 0.4)}>
                 <Panel hover className="h-full">
                   <div className="p-4">
-                    <div className="mb-3 flex items-center justify-between">
+                    <div className="mb-3 flex flex-col items-start gap-2 min-[400px]:flex-row min-[400px]:items-center min-[400px]:justify-between">
                       <h3 className="font-bold uppercase tracking-wider text-bone">{s.name}</h3>
                       <span className={`border px-1.5 py-0.5 text-[10px] font-bold tracking-widest ${st.text} ${st.border}`}>{rarity}</span>
                     </div>

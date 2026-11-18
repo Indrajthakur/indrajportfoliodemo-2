@@ -8,12 +8,83 @@ import { Reveal } from "./Reveal";
 
 const FILTERS: ("All" | Category)[] = ["All", "Web App", "UI-UX", "Open Source"];
 
-export function ProjectGrid({ projects }: { projects: Project[] }) {
+function MainQuest({ p }: { p: Project }) {
+  return (
+    <Reveal className="mb-8">
+      <article aria-labelledby={`mq-${p.slug}`} className="panel panel-hover overflow-hidden border-acid/50">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-acid/30 bg-acid/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.25em] text-acid">
+          <span>★ MAIN_QUEST</span>
+          <span className="text-dim">STATUS // IN_PROGRESS</span>
+        </div>
+
+        <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[1.2fr_1fr]">
+          <div className="min-w-0">
+            <p className="mb-1 text-[10px] uppercase tracking-widest text-mag">{p.category}</p>
+            <h3 id={`mq-${p.slug}`} className="glitch text-3xl font-bold uppercase tracking-wider text-bone sm:text-4xl" data-text={p.name}>
+              {p.name}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-bone/90 sm:text-base">{p.pitch}</p>
+
+            <div className="mt-6 flex flex-col gap-3 text-xs font-bold uppercase tracking-widest sm:flex-row">
+              {p.live ? (
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glow-btn inline-flex items-center justify-center gap-2 bg-acid px-5 py-3 text-black transition-transform hover:-translate-y-0.5"
+                >
+                  Live Demo <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
+              ) : (
+                <span
+                  aria-disabled="true"
+                  className="inline-flex cursor-not-allowed items-center justify-center gap-2 border border-dashed border-mag px-5 py-3 text-mag"
+                >
+                  Live Demo // Coming Soon
+                </span>
+              )}
+              <a
+                href={p.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-ice px-5 py-3 text-ice transition-colors hover:bg-ice/10 hover:shadow-[0_0_18px_rgba(34,227,255,0.35)]"
+              >
+                View Source
+              </a>
+            </div>
+            <Link href={`/projects/${p.slug}`} className="mt-4 inline-block text-xs uppercase tracking-widest text-dim hover:text-acid">
+              Quest details →
+            </Link>
+          </div>
+
+          <div className="min-w-0">
+            <p className="mb-3 text-[10px] uppercase tracking-[0.25em] text-ice">EQUIPPED_ITEMS</p>
+            <ul className="flex flex-col gap-2">
+              {p.tags.map((t, i) => (
+                <li key={t} className="flex items-center gap-3 border border-ice/50 bg-ice/5 px-3 py-2.5 text-sm text-bone">
+                  <span aria-hidden="true" className="text-ice">
+                    ◈
+                  </span>
+                  <span className="min-w-0 flex-1 truncate font-bold">{t}</span>
+                  <span className="shrink-0 text-[10px] uppercase tracking-widest text-dim">SLOT_0{i + 1}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </article>
+    </Reveal>
+  );
+}
+
+export function ProjectGrid({ projects, featured }: { projects: Project[]; featured?: Project }) {
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>("All");
   const shown = filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <div>
+      {featured && <MainQuest p={featured} />}
+
       <div role="group" aria-label="Filter projects" className="mb-6 flex flex-wrap gap-2 text-xs uppercase tracking-widest">
         {FILTERS.map((f) => (
           <button
@@ -41,7 +112,7 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
       ) : (
         <ul className="grid gap-5 md:grid-cols-2">
           {shown.map((p, i) => (
-            <li key={p.slug}>
+            <li key={p.slug} className="min-w-0">
               <Reveal delay={Math.min(i * 0.06, 0.3)} className="h-full">
                 <article className="panel panel-hover flex h-full flex-col">
                   <div className="flex items-center gap-2 border-b border-line px-3 py-2 text-[11px] text-dim">

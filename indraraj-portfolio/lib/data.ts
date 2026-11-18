@@ -1,7 +1,7 @@
 /**
  * ALL SITE CONTENT LIVES HERE.
  *
- * Real details supplied by Indraraj. Lines marked TODO are still placeholders.
+ * Real details supplied by Indraraj. Lines marked TODO are assumptions to confirm.
  */
 
 export type Rarity = "GOLD" | "SILVER" | "BRONZE";
@@ -20,10 +20,12 @@ export const profile = {
   heroLine: "I build things that work — and I actually enjoy the parts everyone else skips.",
   mission:
     "Building modern web applications, levelling up my frontend skills, and learning how to ship responsive sites with real-world features.",
-  email: "indrajt654@gmail.com",
+  email: "indrajthakur08@gmail.com", // TODO: confirm (earlier form said indrajt654@gmail.com)
+  location: "Rehli, Sagar",
+  education: "B.Tech CS · RGPV",
   stats: {
     months: 7,
-    projects: 4,
+    projects: 5,
     xp: 3420,
     internships: 0,
     streak: 26,
@@ -78,6 +80,28 @@ export const quests: Quest[] = [
   },
 ];
 
+// TODO: replace the generic bullets with the specific algorithms, data structures and mini-projects you've actually built.
+export const coreQuest = {
+  title: "CORE_SYSTEMS_ENGINEERING",
+  xp: 1200,
+  summary: "The fundamentals under the frameworks: C++ and object-oriented programming, built around real problem solving.",
+  branches: [
+    {
+      name: "C++ & OOP",
+      text: "Designs programs around classes, inheritance, polymorphism, encapsulation and abstraction instead of one giant main().",
+    },
+    {
+      name: "Algorithms & Data Structures",
+      text: "Works through data structures such as arrays, linked lists, stacks, queues and trees, and the searching, sorting and recursive algorithms that run on them.",
+    },
+    {
+      name: "System-level Mini-Projects",
+      text: "Builds small C++ programs that get close to the machine: memory, files and program flow.",
+    },
+  ],
+  tags: ["C++", "OOP", "Data Structures", "Algorithms"],
+};
+
 export type Project = {
   slug: string;
   name: string;
@@ -89,9 +113,26 @@ export type Project = {
   tags: string[];
   story: string[];
   highlights: string[];
+  featured?: boolean;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "studyflow",
+    name: "StudyFlow",
+    domain: "github.com/Indrajthakur/StudyFlow",
+    // TODO: add `live: "https://..."` once you have the StudyFlow demo URL.
+    repo: "https://github.com/Indrajthakur/StudyFlow", // TODO: confirm repo URL
+    pitch: "Academic task planner tailored for RGPV syllabus tracking.",
+    category: "Web App",
+    tags: ["Next.js", "Node.js", "Tailwind"],
+    story: [
+      "A task planner built for students on the RGPV syllabus, so tracking what's covered and what's left stops living in a notebook.",
+      "Built with Next.js, Node.js and Tailwind CSS.",
+    ],
+    highlights: ["Built around the RGPV syllabus", "Academic task planning"],
+    featured: true,
+  },
   {
     slug: "task-manager",
     name: "Task_Manager",

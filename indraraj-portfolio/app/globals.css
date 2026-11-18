@@ -178,6 +178,56 @@ body::after {
   100% { opacity: 1; }
 }
 
+/* neon resume button */
+.neon-btn {
+  border: 1px solid var(--ice);
+  color: var(--ice);
+  background: rgba(34, 227, 255, 0.08);
+  box-shadow: 0 0 0 1px rgba(34, 227, 255, 0.35), 0 0 20px rgba(34, 227, 255, 0.35), inset 0 0 14px rgba(34, 227, 255, 0.12);
+  animation: neon-pulse 2.4s ease-in-out infinite;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+.neon-btn:hover,
+.neon-btn:focus-visible {
+  background: var(--ice);
+  color: #001014;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--ice), 0 0 34px rgba(34, 227, 255, 0.85), 0 0 70px rgba(34, 227, 255, 0.4);
+  animation: none;
+}
+@keyframes neon-pulse {
+  50% {
+    box-shadow: 0 0 0 1px rgba(34, 227, 255, 0.6), 0 0 32px rgba(34, 227, 255, 0.55), inset 0 0 18px rgba(34, 227, 255, 0.2);
+  }
+}
+
+/* holographic panel */
+.holo {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(34, 227, 255, 0.4);
+  background: linear-gradient(135deg, rgba(34, 227, 255, 0.1), rgba(255, 43, 214, 0.06) 60%, rgba(182, 255, 60, 0.05));
+  box-shadow: 0 0 24px rgba(34, 227, 255, 0.12), inset 0 0 24px rgba(34, 227, 255, 0.06);
+}
+.holo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
+  transform: translateX(-100%);
+  animation: holo-sheen 5s ease-in-out infinite;
+}
+@keyframes holo-sheen {
+  0%,
+  60% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

@@ -25,7 +25,7 @@ export function Achievements() {
                     </div>
                     <h3 className="font-bold uppercase tracking-wider text-bone">{a.title}</h3>
                     <p className="mt-2 flex-1 text-xs leading-relaxed text-bone/80">{a.line}</p>
-                    <div className="mt-4 flex items-center justify-between">
+                    <div className="mt-4 flex flex-col items-start gap-1 min-[400px]:flex-row min-[400px]:items-center min-[400px]:justify-between">
                       {external ? (
                         <a href={a.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
                           {a.link}

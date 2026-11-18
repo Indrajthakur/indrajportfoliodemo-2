@@ -17,7 +17,7 @@ export function XPBar({ value, max, label, className = "" }: { value: number; ma
       aria-valuemin={0}
       aria-valuemax={max}
       aria-valuenow={value}
-      className={`h-2 w-full border border-line bg-black/60 ${className}`}
+      className={`h-2 w-full min-w-0 max-w-full shrink border border-line bg-black/60 ${className}`}
     >
       <motion.div
         className="h-full bg-acid shadow-[0_0_10px_rgba(182,255,60,0.7)]"

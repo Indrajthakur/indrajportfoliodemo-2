@@ -10,6 +10,9 @@ import { SourceCode } from "@/components/SourceCode";
 import { projects } from "@/lib/data";
 
 export default function Home() {
+  const featured = projects.find((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
+
   return (
     <>
       <Hero />
@@ -17,7 +20,7 @@ export default function Home() {
       <QuestLog />
       <section id="projects" aria-labelledby="proj-title" className="scroll-mt-32 pt-24">
         <SectionHeader sec="03" title="FEATURED_PROJECTS" id="proj-title" />
-        <ProjectGrid projects={projects.slice(0, 4)} />
+        <ProjectGrid projects={rest.slice(0, 4)} featured={featured} />
         <p className="mt-6 text-xs uppercase tracking-widest">
           <Link href="/projects" className="text-acid hover:underline">
             Browse all projects →
