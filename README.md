@@ -1,93 +1,109 @@
-# INDRARAJ_THAKUR // PORTFOLIO_v3.0
+# 💜 Indraj Thakur | Developer Portfolio
 
-A dark, gamified "RPG terminal" developer portfolio. The visitor is `System_User`, I'm the player character, and every section is a piece of the HUD: skills are loot cards, experience is a quest log, projects are mini browser windows.
+\<p align="center">   \<img src="[https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&pause=1000&color=A855F7&center=true&vCenter=true&width=600&lines=Hi%2C+I](https://readme-typing-svg.herokuapp.com?font=Fira+Code\&size=26\&pause=1000\&color=A855F7\&center=true\&vCenter=true\&width=600\&lines=Hi%2C+I)'m+Indraj+Thakur;Developer+%7C+Code+Architect;Building+Digital+Experiences" alt="Typing SVG" /> \</p>
 
-> `// SYSTEM_BOOT :: PORTFOLIO_v3.0 :: READY`
+\<p align="center">   \<a href="[https://indraraj-portfolio-j1n8-4e0toa7uz-amra8.vercel.app/](https://indraraj-portfolio-j1n8-4e0toa7uz-amra8.vercel.app/)">     \<img src="[https://img.shields.io/badge/🌐\_Live_Portfolio-Visit_Now-A855F7?style=for-the-badge](https://img.shields.io/badge/🌐_Live_Portfolio-Visit_Now-A855F7?style=for-the-badge)" />   \</a>   \<a href="[https://github.com/Indrajthakur](https://github.com/Indrajthakur)">     \<img src="[https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge\&logo=github)" />   \</a> \</p>
 
-## Features
+---
 
-- **HUD layout:** sticky top bar with level chip, XP bar and contact links, plus fixed side rails on large screens.
-- **Hero:** boot-line typing effect, current mission, holographic quick-stats panel (location and education), player card with animated stat counters, and a glowing resume download button.
-- **Skill Deck:** rarity-tagged skill cards (GOLD / SILVER / BRONZE) with segmented power bars.
-- **Quest Log:** a Core Systems Engineering quest (C++ and OOP) plus an experience timeline.
-- **Projects:** a StudyFlow "Main Quest" card, filterable project cards styled as browser windows, and a detail page for each project.
-- **Achievements, GitHub activity and contact:** trophy cards, a live contribution graph, a repository list and a contact form.
-- **Pages:** Home, About, Experience, Projects, Blog.
-- **Accessible and responsive:** semantic landmarks, skip link, visible focus rings, keyboard-navigable menu, `prefers-reduced-motion` support, and layouts that stack on mobile.
+## 👨‍💻 About Me
 
-## Tech stack
+Hi! I'm **Indraj Thakur**, a developer passionate about building modern, interactive, and visually appealing digital experiences.
 
-| Area | Tools |
-| --- | --- |
-| Framework | Next.js 15 (App Router), React 19 |
-| Language | TypeScript |
-| Styling | Tailwind CSS 3 |
-| Animation | Framer Motion (reveals, counters, XP bars), pure CSS (glitch, scanlines, glow) |
-| Icons | lucide-react, inline SVG |
+- 💻 Interested in web development and technology.
+- 🎨 Passionate about clean UI/UX and creative designs.
+- 🚀 Constantly learning and exploring new technologies.
+- ⚡ Focused on turning creative ideas into reality.
 
-Gamified decoration is pure CSS and SVG. There is no 3D and no heavy image assets.
+---
 
-## Getting started
+## 🌐 My Portfolio
 
-Requires Node.js 18.18 or newer.
+Welcome to my personal developer portfolio!
+
+This website showcases my developer journey, skills, projects, and ways to connect with me.
+
+**Live Website:**
+[https://indraraj-portfolio-j1n8-4e0toa7uz-amra8.vercel.app/](https://indraraj-portfolio-j1n8-4e0toa7uz-amra8.vercel.app/)
+
+---
+
+## 🛠️ Tech Stack
+
+Technologies used in this project:
+
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+## ✨ Features
+
+- Modern and clean portfolio design
+- Responsive website layout
+- Developer introduction
+- Skills and projects showcase
+- Contact and social links
+- Smooth user experience
+
+---
+
+## 📂 Project Structure
+
+```text
+indraraj-portfolio/
+│
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+└── README.md
+```
+
+*Note: Update this structure if your actual project uses different filenames or folders.*
+
+---
+
+## 🚀 Run Locally
+
+Want to run this project on your computer?
+
+**1. Clone the repository**
 
 ```bash
-npm install
-npm run dev
+git clone https://github.com/Indrajthakur/indraraj-portfolio.git
 ```
 
-Then open http://localhost:3000.
+**2. Open the project folder**
 
-| Script | What it does |
-| --- | --- |
-| `npm run dev` | Start the dev server |
-| `npm run build` | Create a production build |
-| `npm run start` | Serve the production build |
-| `npm run typecheck` | Run TypeScript without emitting files |
-
-## Project structure
-
-```
-app/
-  layout.tsx            Root layout: skip link, rails, top bar, footer
-  page.tsx              Home page
-  about/                About page
-  experience/           Experience page
-  projects/             Projects list and [slug] detail pages
-  blog/                 Blog list and [slug] post pages
-  globals.css           Grid, scanlines, grain, panels, glitch, neon effects
-components/             Hero, TopBar, SkillDeck, QuestLog, ProjectGrid, Achievements, SourceCode, Contact, ...
-lib/data.ts             All site content (see below)
-public/resume.pdf       Downloadable CV
+```bash
+cd indraraj-portfolio
 ```
 
-## Editing the content
+**3. Launch the website**
 
-Everything on the site comes from one file: `lib/data.ts`.
+Open `index.html` in your browser, or use the Live Server extension in VS Code.
 
-- `profile`: name, role, class title, level and XP, email, location, education, hero stats
-- `socials`: GitHub, LinkedIn, X, Instagram, email
-- `skills`: name, power score (0-100) and a one-line description. Rarity is derived from the score.
-- `quests` and `coreQuest`: experience timeline and the Core Systems Engineering quest
-- `projects`: add a project and it appears in the grid and gets its own detail page. Set `featured: true` to make it the Main Quest card. Leave out `live` if there is no demo yet.
-- `achievements` and `posts`
+---
 
-To change the resume, replace `public/resume.pdf`.
+## 📬 Connect With Me
 
-## Notes
+\<p align="center">
+&#x20; \<a href="[https://github.com/Indrajthakur](https://github.com/Indrajthakur)">
+&#x20;   \<img src="[https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github\&logoColor=white)" />
+&#x20; \</a>
+&#x20; \<a href="[https://www.linkedin.com/in/indraraj-thakurr-2a590a3b1/](https://www.linkedin.com/in/indraraj-thakurr-2a590a3b1/)">
+&#x20;   \<img src="[https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)" />
+&#x20; \</a>
+\</p>
 
-- **Contact form:** there is no backend yet. Submitting opens the visitor's email app with the message prefilled. To send mail directly, add a route handler or an email service.
-- **Contribution graph:** loaded from [ghchart.rshah.org](https://ghchart.rshah.org) using the GitHub username set in `lib/data.ts`.
-- **Blog:** empty by default. Add entries to `posts` in `lib/data.ts` and they show up automatically.
+---
 
-## Deploy
+## 💜 Support
 
-The easiest route is [Vercel](https://vercel.com):
+If you like my work, consider giving this repository a ⭐!
 
-1. Push the project to GitHub.
-2. Import the repository in Vercel.
-3. Keep the default Next.js settings and deploy.
-
-## Author
-
-**Indraraj Thakur** · [GitHub](https://github.com/Indrajthakur) · [LinkedIn](https://www.linkedin.com/in/indraraj-thakurr-2a590a3b1) · [X](https://x.com/RThakur79501)
+\<p align="center">
+&#x20; \<b>Designed & Built with 💜 by Indraj Thakur\</b>
+\</p>
